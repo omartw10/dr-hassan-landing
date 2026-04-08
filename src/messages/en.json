@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "title": "Legal Counsel, Legislative Studies & Certified Translation",
+    "description": "Official site of Dr. Hassan Hashem Al-Maliki — Specialist Attorney in Financial Law, Legislative Advisory, and Certified Bilingual Legal Translation."
+  },
+  "hero": {
+    "name": "Dr. Hassan Hashem Al-Maliki",
+    "title": "Attorney & Legal Consultant",
+    "specialization": "Specialist in financial law, legislative studies, and certified legal translation",
+    "subheadline": "Combining legal expertise, academic depth, and legislative specialisation to deliver counsel grounded in a rigorous understanding of Saudi regulation and international best practice.",
+    "cta_primary": "Start on WhatsApp",
+    "cta_secondary": "Direct Call",
+    "badge": "Licensed Attorney — Licence No. 3531",
+    "eyebrow": "Attorney · Legislative Consultant · Academic Researcher",
+    "panel_title": "Clear, measured legal judgement",
+    "panel_text": "Advice is shaped through close reading of the law, the facts, and the commercial consequences of each decision — not through generic answers.",
+    "location_label": "Head Office",
+    "location_value": "Jeddah — Al-Sharafiyyah",
+    "access_label": "Service Reach",
+    "access_value": "Jeddah · Riyadh · Al-Qassim",
+    "counsel_label": "Legislative Consultant & Scholar",
+    "counsel_text": "Legal counsel grounded in academic scholarship in jurisprudence and practical expertise in financial and legislative law.",
+    "positioning_label": "Professional Credentials",
+    "metric_years": "Years of legal practice",
+    "metric_cities": "Key regions served",
+    "metric_bilingual": "Certified legal translation",
+    "profile_alt": "Dr. Hassan Hashem Al-Maliki — Licensed Attorney & Legal Consultant",
+    "licence_badge": "Licence No. 3531"
+  },
+  "authority": {
+    "experience": "+15 Years",
+    "experience_label": "Legal Experience",
+    "locations": "Jeddah | Riyadh | Al-Qassim",
+    "locations_label": "Service Reach",
+    "membership": "Licence No. 3531",
+    "membership_label": "Saudi Bar Association",
+    "languages": "Arabic | English",
+    "languages_label": "Bilingual Service"
+  },
+  "services": {
+    "title": "Areas of Expertise",
+    "subtitle": "Advanced legal services for matters requiring deep legislative understanding and precise, responsible drafting.",
+    "eyebrow": "Practice Areas",
+    "items": {
+      "financial": {
+        "title": "Financial Law",
+        "description": "Specialised counsel on equities, securities, and commercial paper, with deep understanding of the regulatory frameworks governing Saudi financial markets."
+      },
+      "legislative": {
+        "title": "Legislative Studies",
+        "description": "Drafting regulations, preparing policy papers, compliance studies, and legal memoranda for entities aligning their governance with Sharia and international law."
+      },
+      "translation": {
+        "title": "Certified Legal Translation",
+        "description": "Certified legal translation of international contracts and documents between Arabic and English, preserving full regulatory meaning and contractual intent."
+      },
+      "istihkam": {
+        "title": "Property & Title Documentation",
+        "description": "Title deed extraction (hujaj al-istihkam), property documentation, and related matters including inheritance, estate disputes, and associated regulatory procedures."
+      },
+      "contracts": {
+        "title": "Commercial Contracts",
+        "description": "Drafting and reviewing commercial contracts with attention to legal clarity, contractual risk mitigation, and balanced allocation of rights between parties."
+      },
+      "foreign_investment": {
+        "title": "Foreign Investment",
+        "description": "Comprehensive legal support for foreign investors navigating Saudi regulatory requirements and building appropriate transactional structures for market entry."
+      }
+    }
+  },
+  "about": {
+    "title": "Professional Profile",
+    "eyebrow": "Profile",
+    "paragraph_1": "Dr. Hassan Hashem Ahmed Al-Maliki holds a Doctorate in Usul al-Fiqh (Principles of Islamic Jurisprudence) from the Islamic University of Madinah, a Master's from Umm Al-Qura University, and a Bachelor's in Sharia from Umm Al-Qura University — providing an exceptional scholarly foundation for every legal opinion.",
+    "paragraph_2": "A licensed attorney with the Saudi Ministry of Justice and a core member of the Saudi Bar Association (Licence No. 3531), he brings together specialised legal practice, academic research, and legislative consultancy.",
+    "paragraph_3": "He serves clients from his head office in Jeddah (Al-Sharafiyyah), with advisory coverage extending to Riyadh and Al-Qassim, supporting local companies and international entities seeking grounded guidance on the Saudi market."
+  },
+  "why": {
+    "title": "Why clients work with him",
+    "eyebrow": "What sets the practice apart",
+    "items": {
+      "academic": {
+        "title": "Academic authority",
+        "description": "Holder of a Doctorate and a researcher in Islamic jurisprudence and legislation, bringing a depth of scholarly analysis that extends beyond procedural practice to foundational legal understanding."
+      },
+      "bilingual": {
+        "title": "Bilingual drafting",
+        "description": "A certified legal translator working in Arabic and English to the same professional standard, suitable for international firms and cross-border contracts."
+      },
+      "geographic": {
+        "title": "Wide geographic coverage",
+        "description": "Head office in Jeddah with advisory reach extending to Riyadh and Al-Qassim, serving business and investment sectors across the Kingdom."
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in touch when clarity matters",
+    "subtitle": "For legal consultations, legislative advisory, and certified legal translation, you can begin on WhatsApp or by phone.",
+    "whatsapp": "Contact on WhatsApp",
+    "call": "Direct Call",
+    "email_label": "Email",
+    "location_label": "Location",
+    "availability_label": "Availability",
+    "consultation_label": "Direct Consultation",
+    "location": "Jeddah — Al-Sharafiyyah District, Abu Bakr Al-Siddiq Street",
+    "hours": "Sunday — Thursday | 9:00 AM — 5:00 PM"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "membership": "Member of the Saudi Bar Association — Licence No. 3531"
+  },
+  "nav": {
+    "services": "Expertise",
+    "about": "Profile",
+    "why": "Why Him",
+    "contact": "Contact",
+    "brand": "Dr. Hassan Hashem Al-Maliki",
+    "home": "Home",
+    "call": "Call"
+  }
+}
