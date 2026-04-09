@@ -33,10 +33,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: "Dr. Hassan Al-Maliki",
       images: [
         {
-          url: `${siteUrl}/openGraph%20image.png`,
+          url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "Dr. Hassan Hashem Al-Maliki",
+          alt: "د. حسن هاشم المالكي",
         },
       ],
       locale: locale === "ar" ? "ar_SA" : "en_US",
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: locale === "ar"
         ? "محامٍ ومستشار قانوني"
         : "Attorney & Legal Consultant",
-      images: [`${siteUrl}/openGraph%20image.png`],
+      images: ["/og-image.png"],
     },
   };
 }
