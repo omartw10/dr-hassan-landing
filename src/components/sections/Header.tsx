@@ -50,9 +50,12 @@ export function Header({ locale, brand, navItems, callLabel }: HeaderProps) {
               {/* Mobile hamburger */}
               <button
                 type="button"
-                onClick={() => setMobileOpen((prev) => !prev)}
-                className="relative z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] shadow-lg transition-all duration-200 hover:border-[var(--color-gold)] lg:hidden"
-                style={{ touchAction: "manipulation" }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileOpen(!mobileOpen);
+                }}
+                className="relative z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] shadow-lg transition-all duration-200 focus:outline-none lg:hidden"
+                style={{ touchAction: "manipulation", WebkitTapHighlightColor: "transparent" }}
                 aria-label="Toggle navigation"
                 aria-expanded={mobileOpen}
                 aria-controls="mobile-navigation"
