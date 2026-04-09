@@ -50,12 +50,13 @@ export function Header({ locale, brand, navItems, callLabel }: HeaderProps) {
               {/* Mobile hamburger */}
               <button
                 onClick={() => setMobileOpen((prev) => !prev)}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] transition-all duration-200 hover:border-[var(--color-gold)] lg:hidden"
+                className="relative z-50 flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] shadow-lg transition-all duration-200 hover:border-[var(--color-gold)] active:scale-95 lg:hidden"
+                style={{ touchAction: "manipulation" }}
                 aria-label="Toggle navigation"
                 aria-expanded={mobileOpen}
                 aria-controls="mobile-navigation"
               >
-                <svg className="h-5 w-5 text-[var(--color-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="h-5 w-5 text-[var(--color-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   {mobileOpen ? (
                     <>
                       <line x1="18" y1="6" x2="6" y2="18" />

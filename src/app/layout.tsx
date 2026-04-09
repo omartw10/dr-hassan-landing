@@ -35,7 +35,11 @@ const englishBody = localFont({
   weight: "400 600",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL 
+  ? process.env.NEXT_PUBLIC_SITE_URL 
+  : process.env.VERCEL_URL 
+    ? `https://${process.env.VERCEL_URL}` 
+    : "https://dr-hassan-maliki.com"; // Fallback to production domain
 
 const localeBootstrap = `(function () {
   var locale = location.pathname.split("/")[1] === "en" ? "en" : "ar";
@@ -45,9 +49,16 @@ const localeBootstrap = `(function () {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Dr. Hassan Hashem Al-Maliki",
+  title: {
+    default: "Dr. Hassan Hashem Al-Maliki | Attorney & Legal Consultant",
+    template: "%s | Dr. Hassan Al-Maliki",
+  },
   description:
-    "Premium bilingual legal landing page for Dr. Hassan Hashem Al-Maliki.",
+    "Official bilingual legal platform of Dr. Hassan Hashem Al-Maliki. Specialised in Financial Law, Legislative Advisory, and Certified Translation.",
+  icons: {
+    icon: "/icon",
+    apple: "/apple-icon",
+  },
   alternates: {
     languages: {
       ar: "/ar",
