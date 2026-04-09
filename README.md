@@ -1,171 +1,132 @@
-Premium bilingual legal landing page for Dr. Hassan Hashem Al-Maliki, built to establish digital authority and drive direct consultation enquiries through WhatsApp and phone CTAs.
-## Overview
-This project is a premium legal landing page built with Next.js for a high-trust, bilingual audience. It is designed around an Arabic-first experience with formal English support, strong editorial presentation, performance-conscious motion, and a conversion flow that routes visitors directly to WhatsApp or phone contact.
-The codebase prioritises:
-- Arabic-first UX with RTL as the default direction
-- English support with a dedicated LTR layout
-- High-end legal brand presentation
-- Smooth scrolling and purposeful animation
-- SEO-ready structure and metadata support
-- Secure, no-form contact flows
-## Experience Highlights
-- Multi-section legal landing page tailored for authority and trust
-- Arabic and English content powered by `next-intl`
-- RTL/LTR-aware layout, spacing, and motion behaviour
-- GSAP-powered animation system with Motion-based UI interactions
-- Lenis smooth scrolling integrated with the animation layer
-- SEO support through metadata, sitemap, robots, manifest, and structured data helpers
-- Mobile-responsive experience with attention to narrow viewports
-- Direct consultation CTAs via WhatsApp and phone
-## Tech Stack
-- Next.js 16.2.2 (App Router)
-- React 19.2.4
-- TypeScript (strict mode)
-- Tailwind CSS v4
-- GSAP 3.14.2
-- Motion 12.38.0 via `motion/react`
-- Lenis 1.3.21
-- `next-intl` for localisation
-- Vercel deployment target
-## Local Development
+# 🏛️ Dr. Hassan Hashem Al-Maliki — Legal Authority Landing Page
+
+[![Framework: Next.js](https://img.shields.io/badge/Framework-Next.js%2016-0a1628?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![Style: Tailwind v4](https://img.shields.io/badge/Style-Tailwind%20v4-c9a84c?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![Animation: GSAP](https://img.shields.io/badge/Animation-GSAP-f5f0e8?style=flat-square&logo=greensock)](https://greensock.com/)
+[![I18n: next-intl](https://img.shields.io/badge/i18n-Arabic%20%2F%20English-111d35?style=flat-square)](https://next-intl-docs.vercel.app/)
+
+A premium, bilingual digital experience designed to establish institutional authority for **Dr. Hassan Hashem Al-Maliki**. This project transcends standard landing pages by blending academic prestige with state-of-the-art web technology.
+
+---
+
+## ✨ Project Vision
+This is not just a website; it is a digital extension of a legal institution. Built to evoke trust, authority, and professional excellence, the platform serves as a high-conversion gateway for direct legal consultations in Saudi Arabia and beyond.
+
+### 🏆 Core Pillars
+- **Uncompromising Authority**: A design language inspired by formal legal documents and high-end institutional aesthetics.
+- **Arabic-First Excellence**: Designed from the ground up for a native RTL experience, with a seamless English LTR toggle.
+- **Performance & Motion**: Silky-smooth interactions powered by GSAP and Lenis, ensuring every scroll feels intentional and prestigious.
+- **Privacy-Centric Architecture**: A secure, form-less contact model that prioritises direct person-to-person communication.
+
+---
+
+## 🛠️ Technical Masterpiece
+
+The codebase is engineered for stability, speed, and future-proof scalability using the latest industry standards.
+
+- **Frontend**: `Next.js 16.2` (App Router) with full `TypeScript` strict mode.
+- **Styling**: `Tailwind CSS v4.2` utilizing dynamic CSS variables for a cohesive design system.
+- **Motion Layer**: 
+  - `GSAP 3.14` + `ScrollTrigger` for advanced editorial reveals.
+  - `Motion` (from `motion/react`) for responsive UI state transitions.
+  - `Lenis` for premium smooth-scrolling experience.
+- **Internationalisation**: `next-intl` for robust, type-safe bilingual routing and translations.
+- **SEO & Search**: Fully optimized with dynamic Sitemap, Robots, and Schema.org structured data for legal professionals.
+
+---
+
+## 🎨 Design System: The Academic Palette
+
+The visual identity is defined by a curated palette that balances "Legal Deep Blue" with "Institutional Gold".
+
+### Colors
+| Name | Variable | Hex (Value) | Purpose |
+| :--- | :--- | :--- | :--- |
+| **Deep Primary** | `--color-primary` | `#0a1628` | Background & Depth |
+| **Noble Gold** | `--color-gold` | `#c9a84c` | Accents & Authority |
+| **Gold Light** | `--color-gold-light` | `#e8c96d` | Hover states |
+| **Surface Ink** | `--color-surface` | `#111d35` | Card backgrounds |
+| **Parchment White** | `--color-text` | `#f5f0e8` | Primary Reading |
+
+### Typography
+- **Arabic Display**: *Noto Naskh Arabic* — Echoing classical legal manuscripts.
+- **Arabic Body**: *IBM Plex Arabic* — Modern, legible, and professional.
+- **English Display**: *Playfair Display* — The gold standard for academic prestige.
+- **English Body**: *Crimson Pro* — Refined editorial clarity.
+
+---
+
+## 🌍 Bilingual Orchestration
+
+Every component is architected to perform flawlessly in both **RTL (Arabic)** and **LTR (English)** contexts.
+
+- **Logical Properties**: Using `ps-`, `pe-`, `ms-`, and `me-` for direction-aware spacing.
+- **Mirrored Animations**: Animation vectors automatically invert based on the current locale to ensure natural flow.
+- **Register & Tone**: 
+  - **Arabic**: Formal Modern Standard Arabic (فصحى).
+  - **English**: Formal British register for international legal credibility.
+
+---
+
+## 🔒 Security & Privacy by Design
+
+In alignment with legal ethics and user privacy, this project adheres to a strict "No-Persistence" contact model:
+- **No Forms**: No user data is ever collected or stored on a database.
+- **Direct CTAs**: All conversion points lead directly to encrypted communication channels (WhatsApp or Phone).
+- **Sanitised Logic**: No external third-party scripts (except Google Fonts) are permitted, ensuring a clean and secure environment.
+
+---
+
+## 🚀 Getting Started
+
 ### Prerequisites
 - Node.js 20+
 - npm 10+
-### Install dependencies
+
+### Installation
 ```bash
+# Clone the repository
+git clone [repository-url]
+
+# Install dependencies
 npm install
-Run the development server
+
+# Run development server
 npm run dev
-Then open http://localhost:3000.
-Available Scripts
-- npm run dev — Start the local development server
-- npm run build — Create a production build
-- npm run start — Run the production build locally
-- npm run lint — Run ESLint checks
-Project Structure
+```
+
+### Available Commands
+- `npm run dev`: Starts the local server with Turbopack.
+- `npm run build`: Generates a production-ready optimized bundle.
+- `npm run start`: Runs the production server locally.
+- `npm run lint`: Enforces code quality and standards.
+
+---
+
+## 📦 Project Architecture
+```text
 src/
-  app/
-    [locale]/
-      layout.tsx
-      page.tsx
-    globals.css
-    layout.tsx
-    manifest.ts
-    not-found.tsx
-    robots.ts
-    sitemap.ts
-  components/
-    sections/
-      About.tsx
-      AuthorityBar.tsx
-      Contact.tsx
-      Footer.tsx
-      Header.tsx
-      Hero.tsx
-      Services.tsx
-      Testimonials.tsx
-      WhyChoose.tsx
-    ui/
-      AvailabilityIndicator.tsx
-      BackToTop.tsx
-      CTAButton.tsx
-      HeroReveal.tsx
-      LanguageToggle.tsx
-      LegalDisclaimer.tsx
-      LoadingScreen.tsx
-      LocaleDocument.tsx
-      SchemaJsonLd.tsx
-      ScrollProgress.tsx
-      SiteMotion.tsx
-      WhatsAppFAB.tsx
-  fonts/
-    CrimsonPro-Regular.woff2
-    IBMPlexSansArabic-Regular.woff2
-    NotoNaskhArabic-Regular.woff2
-    PlayfairDisplay-Regular.woff2
-  i18n/
-    request.ts
-    routing.ts
-  lib/
-    gsap.ts
-    lenis.ts
-  messages/
-    ar.json
-    en.json
-Internationalisation
-This project is built as a bilingual experience with Arabic as the default locale.
-- Arabic is the default language and must render in RTL
-- English is supported as an LTR alternative
-- Localised content lives in src/messages/ar.json and src/messages/en.json
-- Routing and locale handling are configured in src/i18n/routing.ts and src/i18n/request.ts
-- Components must remain visually correct in both RTL and LTR contexts
-RTL/LTR Rules
-When building or updating UI:
-- Use logical spacing utilities such as ps-*, pe-*, ms-*, and me-*
-- Use text-start and text-end instead of left/right-specific alignment utilities
-- Ensure animations respect reading direction
-- Verify that layout, alignment, and CTA placement remain correct in both locales
-Design System
-The visual system is driven by CSS variables defined in src/app/globals.css. Do not hardcode colour values in components.
-Core Colour Tokens
-- --color-primary
-- --color-gold
-- --color-gold-light
-- --color-surface
-- --color-text
-- --color-text-muted
-- --color-border
-Typography
-- Arabic display: Noto Naskh Arabic
-- Arabic body: IBM Plex Arabic
-- English display: Playfair Display
-- English body: Crimson Pro
-Fonts are stored locally in src/fonts.
-Animation Guidelines
-Animation is part of the product experience and should be implemented carefully.
-- Import GSAP utilities from src/lib/gsap.ts
-- Import Motion from motion/react
-- Do not use framer-motion
-- Use Lenis for smooth scroll orchestration where needed
-- Respect prefers-reduced-motion
-- Avoid decorative motion that introduces layout jank or distracts from legal credibility
-Contact Model and Security Constraints
-This landing page is intentionally designed without data collection forms.
-Contact Rules
-- All primary CTAs should lead to phone or WhatsApp
-- Do not add forms that collect or store user data
-- Do not introduce external scripts except where explicitly allowed by project rules
-- Keep all contact actions aligned with the project requirements
-Contact Data
-Use the project-approved values:
-- Phone / WhatsApp: +966508089886
-- WhatsApp URL: https://wa.me/966508089886
-- Email placeholder: dr.hassan@[domain].com
-- Location: Jeddah, Al-Sharafiyyah District
-SEO and Metadata
-The project includes supporting files and components for search and platform presentation, including:
-- src/app/sitemap.ts
-- src/app/robots.ts
-- src/app/manifest.ts
-- src/components/ui/SchemaJsonLd.tsx
-When updating branding, copy, or page structure, keep metadata and structured data aligned with the visible experience.
-Deployment
-This project is intended to be deployed on Vercel.
-Recommended pre-deployment checks:
-npm run lint
-npm run build
-If both commands pass, the application is ready for a standard Vercel deployment workflow.
-Contributor Checklist
-Before shipping changes, verify the following:
-- Arabic renders correctly in RTL
-- English renders correctly in LTR
-- Layout is stable on mobile widths starting at 375px
-- Motion is smooth and does not cause layout shifts
-- Design tokens are used instead of hardcoded colours
-- Contact flows only use approved WhatsApp and phone actions
-- Content remains formal, institutional, and legally appropriate
-Project Notes
-- This repository uses the Next.js App Router
-- The project is structured for static-first delivery
-- Localisation, typography, motion, and trust-building presentation are core concerns
-- The experience should feel premium, restrained, and authoritative rather than generic
+├── app/[locale]/       # Multi-language routing layer
+├── components/
+│   ├── sections/       # Narrative blocks (Hero, About, Why, etc.)
+│   └── ui/             # High-finesse atomic components
+├── lib/                # Engine initialization (GSAP, Lenis)
+├── messages/           # Translation dictionaries (ar, en)
+└── fonts/              # Custom brand typography
+```
+
+---
+
+## 🎓 Contributor Guidelines
+To maintain the prestige of this project, ensure that:
+1. All changes are tested in both **Arabic (RTL)** and **English (LTR)**.
+2. Motion is never decorative; it must always enhance the context or guide the eye.
+3. Typography remains legible across all device sizes (minimum 375px).
+4. **Never** hardcode hex colors; always use the CSS variable tokens.
+
+---
+
+<div align="center">
+  <p>Built with precision by <strong>NeuraSync AI</strong></p>
+  <p>For <strong>Dr. Hassan Hashem Al-Maliki</strong></p>
+</div>
