@@ -50,13 +50,7 @@ export function Header({ locale, brand, navItems, callLabel }: HeaderProps) {
               {/* Mobile hamburger */}
               <button
                 type="button"
-                onPointerDown={(e) => {
-                  e.preventDefault();
-                  setMobileOpen((prev) => !prev);
-                }}
-                onTouchEnd={(e) => {
-                  e.preventDefault();
-                }}
+                onClick={() => setMobileOpen((prev) => !prev)}
                 className="relative z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] shadow-lg transition-all duration-200 hover:border-[var(--color-gold)] active:scale-95 lg:hidden"
                 style={{ touchAction: "manipulation" }}
                 aria-label="Toggle navigation"
