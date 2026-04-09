@@ -50,18 +50,14 @@ export function Header({ locale, brand, navItems, callLabel }: HeaderProps) {
               {/* Mobile hamburger */}
               <button
                 type="button"
-                onTouchStart={(e) => e.stopPropagation()}
-                onTouchEnd={(e) => e.stopPropagation()}
-                onPointerDown={(e) => e.stopPropagation()}
                 onClick={() => setMobileOpen((prev) => !prev)}
                 className="relative z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] shadow-lg transition-all duration-200 hover:border-[var(--color-gold)] active:scale-95 lg:hidden"
                 style={{ touchAction: "manipulation" }}
                 aria-label="Toggle navigation"
                 aria-expanded={mobileOpen}
                 aria-controls="mobile-navigation"
-                data-lenis-prevent="true"
               >
-                <svg className="h-5 w-5 text-[var(--color-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="pointer-events-none h-5 w-5 text-[var(--color-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   {mobileOpen ? (
                     <>
                       <line x1="18" y1="6" x2="6" y2="18" />
@@ -94,27 +90,29 @@ export function Header({ locale, brand, navItems, callLabel }: HeaderProps) {
           {/* Mobile dropdown */}
           <div
             id="mobile-navigation"
-            className={`overflow-hidden border-t border-[var(--color-border)] transition-all duration-300 lg:hidden ${
-              mobileOpen ? "max-h-80 py-3 opacity-100" : "max-h-0 py-0 opacity-0"
+            className={`grid transition-[grid-template-rows,opacity] duration-300 lg:hidden ${
+              mobileOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
             }`}
           >
-            <div className="flex flex-col gap-2">
-              {navItems.map((item) => (
+            <div className="overflow-hidden">
+              <div className="flex flex-col gap-2 border-t border-[var(--color-border)] py-3">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-3 text-sm text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-gold)]"
+                  >
+                    {item.label}
+                  </a>
+                ))}
                 <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-3 text-sm text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-gold)]"
+                  href="tel:+966508089886"
+                  className="mt-1 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-3 text-center text-sm font-medium text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-gold)]"
                 >
-                  {item.label}
+                  {callLabel}
                 </a>
-              ))}
-              <a
-                href="tel:+966508089886"
-                className="mt-1 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-3 text-center text-sm font-medium text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-gold)]"
-              >
-                {callLabel}
-              </a>
+              </div>
             </div>
           </div>
         </div>
