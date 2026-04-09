@@ -64,6 +64,66 @@ const THEMES = [
     }
   },
   {
+    id: "warm-brown",
+    name: "بني دافئ",
+    vars: {
+      "--color-primary": "#13100a",
+      "--color-surface": "#1e1810",
+      "--color-gold": "#d4a843",
+      "--color-gold-light": "#e8c060",
+      "--color-text": "#f5efe0",
+      "--color-text-muted": "#9a8a6a",
+      "--color-border": "#2e2416",
+      "--color-header-bg": "rgba(19,16,10,0.88)",
+      "--color-bg-subtle": "#0c0a06",
+    }
+  },
+  {
+    id: "night-forest",
+    name: "غابة ليلية",
+    vars: {
+      "--color-primary": "#050f09",
+      "--color-surface": "#0a1a10",
+      "--color-gold": "#d4a843",
+      "--color-gold-light": "#e8c060",
+      "--color-text": "#ecf5ec",
+      "--color-text-muted": "#5a8a6a",
+      "--color-border": "#102818",
+      "--color-header-bg": "rgba(5,15,9,0.90)",
+      "--color-bg-subtle": "#030805",
+    }
+  },
+  {
+    id: "dark-teal",
+    name: "أزرق مخضر",
+    vars: {
+      "--color-primary": "#041210",
+      "--color-surface": "#071e1b",
+      "--color-gold": "#c9a84c",
+      "--color-gold-light": "#e8c96d",
+      "--color-text": "#edf5f4",
+      "--color-text-muted": "#6a9a95",
+      "--color-border": "#0f2e2a",
+      "--color-header-bg": "rgba(4,18,16,0.88)",
+      "--color-bg-subtle": "#020a09",
+    }
+  },
+  {
+    id: "dark-olive",
+    name: "زيتوني داكن",
+    vars: {
+      "--color-primary": "#0f0f0c",
+      "--color-surface": "#18180f",
+      "--color-gold": "#c4a55a",
+      "--color-gold-light": "#dcc070",
+      "--color-text": "#ede8db",
+      "--color-text-muted": "#888070",
+      "--color-border": "#252518",
+      "--color-header-bg": "rgba(15,15,12,0.90)",
+      "--color-bg-subtle": "#090907",
+    }
+  },
+  {
     id: "light",
     name: "فاتح (Light Mode)",
     vars: {
