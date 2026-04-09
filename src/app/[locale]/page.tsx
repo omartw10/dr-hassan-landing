@@ -8,6 +8,7 @@ import { Footer } from "@/components/sections/Footer";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { WhatsAppFAB } from "@/components/ui/WhatsAppFAB";
 import { BackToTop } from "@/components/ui/BackToTop";
+import { ThemeSelector } from "@/components/ui/ThemeSelector";
 import { Header } from "@/components/sections/Header";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
@@ -138,6 +139,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
       <Footer locale={locale} rights={footer("rights")} membership={footer("membership")} />
       <WhatsAppFAB />
       <BackToTop />
+      <ThemeSelector />
     </main>
   );
 }
