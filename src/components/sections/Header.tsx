@@ -50,15 +50,21 @@ export function Header({ locale, brand, navItems, callLabel }: HeaderProps) {
               {/* Mobile hamburger */}
               <button
                 type="button"
-                onClick={(e) => {
+                onPointerDown={(e) => {
+                  // Instant touch response + prevents bubbling to scroll hijackers
                   e.preventDefault();
-                  setMobileOpen(!mobileOpen);
+                  setMobileOpen((prev) => !prev);
                 }}
-                className="relative z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] shadow-lg transition-all duration-200 focus:outline-none lg:hidden"
-                style={{ touchAction: "manipulation", WebkitTapHighlightColor: "transparent" }}
+                onClick={() => {
+                  // Fallback for keyboard accessibility (Enter/Space)
+                  setMobileOpen((prev) => !prev);
+                }}
+                className="relative z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] shadow-lg transition-all duration-200 hover:border-[var(--color-gold)] active:scale-95 lg:hidden"
+                style={{ touchAction: "manipulation" }}
                 aria-label="Toggle navigation"
                 aria-expanded={mobileOpen}
                 aria-controls="mobile-navigation"
+                data-lenis-prevent="true"
               >
                 <svg className="h-5 w-5 text-[var(--color-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   {mobileOpen ? (
