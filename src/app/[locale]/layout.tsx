@@ -19,10 +19,37 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
   const nav = await getTranslations({ locale, namespace: "nav" });
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://dr-hassan-law.vercel.app";
 
   return {
     title: `${nav("brand")} | ${t("title")}`,
     description: t("description"),
+    openGraph: {
+      title: locale === "ar" ? "د. حسن هاشم المالكي" : "Dr. Hassan Hashem Al-Maliki",
+      description: locale === "ar"
+        ? "محامٍ ومستشار قانوني — متخصص في الدراسات التشريعية والخدمات المالية"
+        : "Attorney & Legal Consultant — Legislative Studies & Financial Law",
+      url: `${siteUrl}/${locale}`,
+      siteName: "Dr. Hassan Al-Maliki",
+      images: [
+        {
+          url: `${siteUrl}/${locale}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: "Dr. Hassan Hashem Al-Maliki",
+        },
+      ],
+      locale: locale === "ar" ? "ar_SA" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: locale === "ar" ? "د. حسن هاشم المالكي" : "Dr. Hassan Hashem Al-Maliki",
+      description: locale === "ar"
+        ? "محامٍ ومستشار قانوني"
+        : "Attorney & Legal Consultant",
+      images: [`${siteUrl}/${locale}/opengraph-image`],
+    },
   };
 }
 
