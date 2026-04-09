@@ -96,29 +96,29 @@ export function Header({ locale, brand, navItems, callLabel }: HeaderProps) {
           {/* Mobile dropdown */}
           <div
             id="mobile-navigation"
-            className={`grid transition-[grid-template-rows,opacity] duration-300 lg:hidden ${
-              mobileOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-            }`}
+            className="overflow-hidden transition-all duration-300 ease-in-out lg:hidden"
+            style={{
+              maxHeight: mobileOpen ? "500px" : "0px",
+              opacity: mobileOpen ? 1 : 0,
+            }}
           >
-            <div className="overflow-hidden">
-              <div className="flex flex-col gap-2 border-t border-[var(--color-border)] py-3">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-3 text-sm text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-gold)]"
-                  >
-                    {item.label}
-                  </a>
-                ))}
+            <div className="flex flex-col gap-2 border-t border-[var(--color-border)] py-3">
+              {navItems.map((item) => (
                 <a
-                  href="tel:+966508089886"
-                  className="mt-1 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-3 text-center text-sm font-medium text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-gold)]"
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-3 text-sm text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-gold)]"
                 >
-                  {callLabel}
+                  {item.label}
                 </a>
-              </div>
+              ))}
+              <a
+                href="tel:+966508089886"
+                className="mt-1 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-3 text-center text-sm font-medium text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-gold)]"
+              >
+                {callLabel}
+              </a>
             </div>
           </div>
         </div>
