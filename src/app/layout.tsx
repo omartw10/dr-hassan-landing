@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/hassan_profile_pic.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Dr. Hassan Hashem Al-Maliki — Attorney & Legal Consultant",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     title: "Dr. Hassan Hashem Al-Maliki",
     description:
       "Premium bilingual legal advisory for institutions, investors, and cross-border matters.",
-    images: ["/hassan_profile_pic.png"],
+    images: ["/og-image.png"],
   },
 };
 
