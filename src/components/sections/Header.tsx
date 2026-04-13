@@ -21,98 +21,101 @@ export function Header({ locale, brand, navItems, callLabel }: HeaderProps) {
     : "text-xs uppercase tracking-[0.18em]";
 
   return (
-    <header data-reveal="hero" className="sticky top-0 z-30 px-4 pt-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl rounded-2xl border border-[var(--color-header-border)] bg-[var(--color-header-bg)] shadow-[0_12px_36px_var(--color-card-shadow)] backdrop-blur-xl transition-colors duration-400">
+    <header data-reveal="hero" className="sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl rounded-2xl border border-[var(--color-border)]/40 bg-[var(--color-bg-elevated)]/80 shadow-lg backdrop-blur-md transition-all duration-500">
         <div className="px-5 sm:px-8 lg:px-10">
           {/* Top bar */}
-          <div className="flex items-center justify-between gap-4 py-4">
-            <a href={`/${locale}`} className="flex items-center gap-3 text-[var(--color-text)]">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold-dim)] text-[var(--color-gold-text)]">
-                <ScalesIcon size={18} />
+          <div className="flex items-center justify-between gap-4 py-4 lg:py-5 lg:border-b lg:border-[var(--color-border)]/30">
+            <a href={`/${locale}`} className="flex items-center gap-4 text-[var(--color-text)] group">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-gold)] bg-[var(--color-gold-dim)] text-[var(--color-gold-text)] group-hover:bg-[var(--color-gold)] group-hover:text-[var(--color-primary)] transition-all duration-500 shadow-sm">
+                <ScalesIcon size={20} />
               </span>
-              <span className="text-base font-semibold sm:text-lg">{brand}</span>
+              <div className="flex flex-col">
+                <span className={`text-lg font-medium leading-none tracking-tight sm:text-xl font-[family-name:var(--font-arabic-display)]`}>{brand}</span>
+                <span className="text-[10px] tracking-widest uppercase text-[var(--color-text-muted)] mt-1 hidden sm:block">Legal Consultant</span>
+              </div>
             </a>
 
-            <div className="hidden lg:block">
-              <AvailabilityIndicator locale={locale} />
-            </div>
+            <nav className="hidden lg:flex items-center gap-10">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={`relative py-1 text-[var(--color-text-secondary)] hover:text-[var(--color-gold-light)] transition-colors duration-300 group ${navLabelClass}`}
+                >
+                  {item.label}
+                  <span className="absolute bottom-0 inset-x-0 h-px bg-[var(--color-gold)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-start" />
+                </a>
+              ))}
+            </nav>
 
-            <div className="flex items-center gap-2">
-              <a
-                href="tel:+966508089886"
-                dir="ltr"
-                className="hidden min-h-10 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-2 text-sm font-medium text-[var(--color-text)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-gold)] sm:inline-flex"
-              >
-                +966 50 808 9886
-              </a>
+            <div className="flex items-center gap-4">
+              <div className="hidden xl:block">
+                <AvailabilityIndicator locale={locale} />
+              </div>
+              
               <LanguageToggle locale={locale} />
+
+              <a
+                href="https://wa.me/966508089886"
+                className="hidden lg:flex min-h-[2.85rem] items-center justify-center rounded-full px-7 text-[12px] font-bold text-[#050f09] transition-all duration-500 hover:-translate-y-0.5 shadow-md relative overflow-hidden group"
+                style={{ background: 'var(--gold-gradient)', backgroundSize: '100% 100%' }}
+              >
+                <span className="absolute inset-0 z-0 block w-full h-full transform -translate-x-full bg-gradient-to-r from-transparent via-[var(--color-gold-light)]/15 to-transparent group-hover:transition-all group-hover:duration-1000 group-hover:translate-x-full pointer-events-none" />
+                <span className="relative z-10">{callLabel}</span>
+              </a>
 
               {/* Mobile hamburger */}
               <button
                 type="button"
                 onClick={() => setMobileOpen((prev) => !prev)}
-                className="relative z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] shadow-lg transition-all duration-200 hover:border-[var(--color-gold)] active:scale-95 lg:hidden"
-                style={{ touchAction: "manipulation" }}
+                className="relative z-50 flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)]/50 lg:hidden"
                 aria-label="Toggle navigation"
                 aria-expanded={mobileOpen}
-                aria-controls="mobile-navigation"
               >
-                <svg className="pointer-events-none h-5 w-5 text-[var(--color-text)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  {mobileOpen ? (
-                    <>
-                      <line x1="18" y1="6" x2="6" y2="18" />
-                      <line x1="6" y1="6" x2="18" y2="18" />
-                    </>
-                  ) : (
-                    <>
-                      <line x1="4" y1="8" x2="20" y2="8" />
-                      <line x1="4" y1="16" x2="20" y2="16" />
-                    </>
-                  )}
-                </svg>
+                <div className="w-5 flex flex-col gap-1.5 items-end group">
+                   <span className={`h-px bg-current transition-all duration-300 ${mobileOpen ? 'w-5 translate-y-1 rotate-45' : 'w-5'}`} />
+                   <span className={`h-px bg-current transition-all duration-300 ${mobileOpen ? 'opacity-0' : 'w-3'}`} />
+                   <span className={`h-px bg-current transition-all duration-300 ${mobileOpen ? 'w-5 -translate-y-1 -rotate-45' : 'w-4'}`} />
+                </div>
               </button>
             </div>
           </div>
 
-          {/* Desktop nav */}
-          <nav className="hidden gap-2 border-t border-[var(--color-border)] py-3 lg:flex lg:justify-center lg:gap-3">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className={`whitespace-nowrap rounded-full border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-2 text-[var(--color-text-secondary)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:text-[var(--color-text)] ${navLabelClass}`}
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
           {/* Mobile dropdown */}
           <div
             id="mobile-navigation"
-            className="overflow-hidden transition-all duration-300 ease-in-out lg:hidden"
+            className={`overflow-hidden transition-all duration-500 ease-in-out lg:hidden`}
             style={{
               maxHeight: mobileOpen ? "500px" : "0px",
               opacity: mobileOpen ? 1 : 0,
             }}
           >
-            <div className="flex flex-col gap-2 border-t border-[var(--color-border)] py-3">
+            <div className="flex flex-col gap-1 pb-6 pt-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-3 text-sm text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-gold)]"
+                  className="rounded-xl px-4 py-3 text-base text-[var(--color-text)] hover:bg-[var(--color-bg)] transition-colors"
                 >
                   {item.label}
                 </a>
               ))}
-              <a
-                href="tel:+966508089886"
-                className="mt-1 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-3 text-center text-sm font-medium text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-gold)]"
-              >
-                {callLabel}
-              </a>
+              <div className="h-px bg-[var(--color-border)]/30 my-3" />
+              <div className="flex flex-col gap-3 px-2">
+                 <a 
+                   href="tel:+966508089886" 
+                   className="flex items-center justify-center min-h-[3.5rem] rounded-xl font-bold shadow-md relative overflow-hidden group text-[#050f09]"
+                   style={{ background: 'var(--gold-gradient)', backgroundSize: '100% 100%' }}
+                 >
+                   <span className="absolute inset-0 z-0 block w-full h-full transform -translate-x-full bg-gradient-to-r from-transparent via-[var(--color-gold-light)]/15 to-transparent group-hover:transition-all group-hover:duration-1000 group-hover:translate-x-full pointer-events-none" />
+                   <span className="relative z-10">+966 50 808 9886</span>
+                 </a>
+                 <div className="flex justify-center py-2">
+                    <AvailabilityIndicator locale={locale} />
+                 </div>
+              </div>
             </div>
           </div>
         </div>

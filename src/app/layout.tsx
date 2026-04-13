@@ -3,36 +3,35 @@ import localFont from "next/font/local";
 import Script from "next/script";
 import "./globals.css";
 
-const arabicDisplay = localFont({
-  src: "../fonts/NotoNaskhArabic-Regular.woff2",
+import { Amiri, Tajawal, Playfair_Display, Crimson_Pro } from "next/font/google";
+import { PremiumOrnaments } from "@/components/ui/PremiumOrnaments";
+
+const arabicDisplay = Amiri({
+  subsets: ["arabic"],
   variable: "--font-arabic-display",
+  weight: ["400", "700"],
   display: "swap",
-  preload: true,
-  weight: "400 700",
 });
 
-const arabicBody = localFont({
-  src: "../fonts/IBMPlexSansArabic-Regular.woff2",
+const arabicBody = Tajawal({
+  subsets: ["arabic"],
   variable: "--font-arabic-body",
+  weight: ["400", "500", "700"],
   display: "swap",
-  preload: true,
-  weight: "400 600",
 });
 
-const englishDisplay = localFont({
-  src: "../fonts/PlayfairDisplay-Regular.woff2",
+const englishDisplay = Playfair_Display({
+  subsets: ["latin"],
   variable: "--font-english-display",
+  weight: ["400", "500", "700"],
   display: "swap",
-  preload: true,
-  weight: "500 700",
 });
 
-const englishBody = localFont({
-  src: "../fonts/CrimsonPro-Regular.woff2",
+const englishBody = Crimson_Pro({
+  subsets: ["latin"],
   variable: "--font-english-body",
+  weight: ["400", "600"],
   display: "swap",
-  preload: true,
-  weight: "400 600",
 });
 
 const siteUrl = "https://dr-hassan-law.vercel.app";
@@ -87,6 +86,7 @@ export const metadata: Metadata = {
   },
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -99,7 +99,8 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${arabicDisplay.variable} ${arabicBody.variable} ${englishDisplay.variable} ${englishBody.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-[var(--color-bg)] text-[var(--color-text)]">
+      <body className="relative flex min-h-full flex-col bg-[var(--color-bg)] text-[var(--color-text)]">
+        <PremiumOrnaments />
         <Script id="locale-bootstrap" strategy="beforeInteractive">
           {localeBootstrap}
         </Script>
